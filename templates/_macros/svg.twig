@@ -1,0 +1,17 @@
+{% macro icon(classes, id) %}
+	{% spaceless %}
+		<span class="{{classes}}">
+			<svg><use xlink:href="/assets/svg/symbols.svg#{{id}}"></use></svg>
+		</span>
+	{% endspaceless %}
+{% endmacro %}
+
+
+{% macro pattern(name, classes) %}
+	{% spaceless %}
+		<span class="{{classes}}">
+			<svg><use xlink:href="/assets/svg/patterns.svg#{{name}}"></use></svg>
+		</span>
+	{% endspaceless %}
+{% endmacro %}
+

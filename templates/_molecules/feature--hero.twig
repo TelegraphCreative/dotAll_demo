@@ -1,0 +1,36 @@
+{# Featured Hero #}
+{% import '_macros/global' as render %}
+
+<div class="hero--feature clearfix pb-8 sm:pb-12 {{render.spacing(content)}} ">
+	<article class="h-full md:float-left bg-blue-dark text-blue-light px-6 pt-12 pb-16 sm:px-8 md:pt-16 md:pb-20 w-full lg:w-1/2 {{render.transitions(content)}}">
+		<div class="mr-auto ml-auto md:w-5/6 w-full">
+			<header class="mb-14">
+				<h6 class="uppercase text-1xs mb-10 tracking-wide">
+					{{content.subheader}}
+				</h6>
+
+				<h3 class="text-white text-lg md:text-xl">
+					{{content.header}}
+				</h3>
+			</header>
+
+			<div class="content text-base md:text-md leading-normal mb-12">
+
+				{{content.description}}
+
+			</div>
+
+			{% for button in content.button %}
+				{{render.button(button.target, button.style, button.icon)}}
+			{% endfor %}
+			
+		</div>
+	</article>
+
+	<div class="w-full md:float-left lg:w-1/2 md:bg-grey-lightest lg:mt-lg img {{render.ratio(content)}}">
+
+		{# {{image.single_simple(block.singleImage[0],)}}	 #}
+		{{render.single_image(content.image.one(),'block sm:pr-8 md:pr-10 w-full h-auto')}}  
+
+	</div>
+</div>

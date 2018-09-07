@@ -1,0 +1,10 @@
+{# Stat #}
+{# inView fade-in-up--sm delay-{{loop.index}} duration-3 timing-3 #}
+<div class=" stat__group border__item   {% if loop.index == '3' %}w-full{% else %}w-1/2{% endif %}  block text-center border-grey-lightest md:border-r max-w-xs m-auto mb-10 md:w-1/3 md:mb-0">
+
+	<span class="text-2xl sm:text-4xl block text-blue .mb-6">{{content.header}}</span>
+
+
+	<span class="text-2md text-blue-light">{{content.subheader}}</span>
+
+</div>

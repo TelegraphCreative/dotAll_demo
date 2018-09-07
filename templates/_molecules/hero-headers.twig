@@ -1,0 +1,51 @@
+{# Headers #}
+
+{% switch type %}
+
+	{# Standard Blue #}
+	{% case "page-header--standard" %}
+	
+		<header class="page-header bg-blue {{classes}}">
+			<div class="simple-container py-8 sm:py-10 ">
+				{# Landing Page title: #}
+				<h1 class="text-white font-medium md:text-3xl max-w-lg sm:text-xl text-lg {{classes}}">{{title}}</h1>
+			</div>
+		</header>
+
+	{# Hero Blue #}
+	{% case "page-header--hero" %}
+	
+		<header class="page-header --hero bg-blue-dark relative">
+			<div class="m-auto max-w-md text-center px-4 py-10 sm:py-8 sm:px-0 sm:py-10 relative z-10">
+
+				{# Landing Page title: #}
+				<h1 class="text-white font-medium md:text-3xl sm:text-xl text-lg mb-12 px-4 sm:px-0">{{title}}</h1>
+
+				{# Button #}
+				{{link.button(Button, '--light-blue btn')}}
+
+			</div>
+
+			{# Patterns #}
+			{{svg.pattern('dots','dots pin-t absolute pin-l z-10 text-blue-light h-48 w-32 hidden md:block')}}
+			{{svg.pattern('dots','dots pin-b absolute pin-r z-10 text-blue-light h-48 w-32 hidden md:block')}}
+
+			{# Background Image #}
+			<div class="absolute h-full w-full pin-t pin-l overflow-hidden z-0">
+				{{image.single_simple(Image, 'cover-img lazyloaded absolute pin-t pin-l z-0')}}
+			</div>
+		</header>
+
+	
+	{# Section Header -- Divider #}
+	{% case "section-header--divider" %}
+		<header class="section-header text-1md sm:text-2md text-grey-dark py-4 border-b border-grey-lightest ">
+			<h4>{{title}}</h4>
+		</header>
+
+		
+	{% default %}
+		other
+
+{% endswitch %}
+

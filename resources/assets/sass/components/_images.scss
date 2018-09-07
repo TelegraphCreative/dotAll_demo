@@ -1,0 +1,77 @@
+//
+// Images
+//
+.img {
+	@apply block relative;
+	
+  img {
+    // @apply .block .h-auto .w-full;
+    @apply h-full w-full pin-t pin-l absolute block;
+    object-fit: cover;
+  }
+
+  &.rounded {
+    img {
+      @apply rounded;
+    }
+  }
+
+  &.rounded-full {
+    img {
+      @apply rounded-full;
+    }
+  }
+
+  // // Ratio
+  // .is1x1,
+  // // &.is4x3,
+  // // &.is3x2,
+  // &.is16x9,
+  // // &.is2x1
+  // &.is552x716 {
+  //   overflow: hidden;
+    
+  //   img {
+  //     @apply h-full w-full pin-t pin-l absolute;
+  //     object-fit: cover;
+  //   }
+  // }
+
+}
+
+
+  .is1x1,
+  .is1by1 {
+    padding-top: 100%
+  }
+  .is4x3 {
+    padding-top: 75%
+  }
+  .is3x4  {
+    padding-bottom: 130.233%;
+  }
+  .is3x2 {
+    padding-top: 66.6666%
+  }
+  .is16x12 {
+    padding-bottom: 76.35%;
+  }
+  .is12x16 {
+    padding-bottom: 130.25%;
+  }
+  .is8x10 {
+    padding-bottom: 125%;
+  }
+  .is16x9 {
+    padding-top: 56.25%
+  }
+  .is8x5 {
+    padding-bottom: 62.5%;
+  }
+  .is2x1 {
+    padding-top: 50%
+  }
+  .is552x716 {
+    padding-top: 129.71014493%
+  //padding-top: 77.09497207%
+  }

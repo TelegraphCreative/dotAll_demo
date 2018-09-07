@@ -1,0 +1,39 @@
+.hero--cta__inner {
+	@apply m-auto max-w-2xl px-4 py-10 px-10 relative overflow-hidden;
+}
+
+.hero-cta__title {
+	@apply text-2md mb-6;
+}
+.hero-cta__descr {
+	@apply text-base max-w-sm mb-12 leading-normal
+}
+
+// Alignment
+.hero--cta {
+	&.text-center {
+		.hero-cta__descr {
+			@apply mx-auto max-w-md
+		}
+	}
+	&.text-right {
+		.hero-cta__descr__row {
+			@apply flex justify-end;
+		}
+	}
+}
+
+@screen sm {
+	.hero--cta__inner {
+		@apply py-12;
+	}
+}
+
+@screen md {
+	.hero-cta__title {
+		@apply text-lg  text-xl;
+	}
+	.hero-ct__descr {
+		@apply text-md
+	}
+}

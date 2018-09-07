@@ -1,0 +1,33 @@
+{% import '_macros/global' as render %}
+
+{# Card #}
+<div class="
+	{{render.transitions(content)}} 
+
+	md:float-left
+	justify-between
+	sm:flex sm:flex-col
+	feature__card mb-lg md:mb-lg border__item w-full block text-center md:w-1/2 md:mb-0 
+	{% if loop.index == '1' %}md:border-r border-b pb-10 sm:pb-0 md:border-b-0 border-grey-lightest {% else %} mb-10 border-grey-lightest  {% endif %}">
+
+		<div>
+			{% if content.header %}
+				<h4 class="text-blue text-2md mb-6 sm:text-lg md:w-4/5 m-auto">{{content.header}}</h4>
+			{% endif %}
+			
+
+			{% if content.description %}
+				<div class="text-base text-grey-dark md:w-4/5 m-auto w-full leading-normal mb-10 sm:mb-18 sm:text-md">
+					{{content.description}}
+				</div>
+			{% endif %}
+		</div>
+
+		{% if content.button.count() %}
+			<div class="text-center">
+				{{render.button(content.button.one().target, content.button.one().style, content.button.one().icon)}}
+			</div>
+		{% endif %}
+		
+
+</div>

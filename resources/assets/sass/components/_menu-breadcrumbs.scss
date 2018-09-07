@@ -1,0 +1,91 @@
+//
+// Breadcrumbs
+//
+.site-breadcrumbs {
+
+	@screen sm {
+		a {
+			@apply .relative .inline-block;
+			
+			&:after {
+				@apply .absolute; 
+				content: '\203A';
+				right: 0;
+			}
+		}
+		li:last-child a::after {
+			content: none;
+		}
+	} 
+	
+}
+
+//
+// Step Breadcrumbs
+//
+.step-breadcrumbs {
+	counter-reset: step-counter;
+
+	// Has Circle Counters
+	&.--circle-counters {
+
+		li {
+			@apply .relative;
+			
+			// Default
+			&:before {
+				counter-increment: step-counter;
+		    content: counter(step-counter);
+		
+		    @apply .text-2xs .h-6 .w-6 .border-grey-lightest .border .text-grey-lightest .absolute .rounded-full .flex .justify-center .items-center;
+		    
+
+			}
+			
+			// Name
+			.name {
+				top: 6px;
+				@apply .text-grey-lightest;
+			}
+
+			// Active 
+			&.active {
+				&:before {
+					@apply .bg-blue .text-white .border-blue;
+				}
+				.name {
+					@apply .text-blue;
+				}
+			}
+			
+
+			// Active 
+			&.inactive {
+				&:before {
+					@apply .bg-grey .text-white .border-grey;
+				}
+				.name {
+					@apply .text-grey;
+				}
+			}
+
+			/// Medium
+			@screen md {
+				// Default
+				&:before {
+			    height: 2.25rem;
+			    width: 2.25rem;
+			    @apply .text-md
+
+				}
+				.name {
+					top: 8px;
+				}
+				
+			}
+			
+		}
+
+	}
+
+}

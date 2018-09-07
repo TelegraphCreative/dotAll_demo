@@ -1,0 +1,115 @@
+{% extends '_layouts/default'%}
+
+{% set longForm = entry.longformArticle %}
+
+{% block content %}
+
+{# Page Header #}
+{% include '_molecules/hero-headers' with {
+	type: 'page-header--standard',
+	title: entry.title,
+	classes: ''
+	} 
+%}
+
+<section class="landing mb-lg simple-container --wide" data-module="accordion">
+
+	{% for block in longForm %}
+		{% set blockIndex = 0 %}
+		{% switch block.type.handle %}
+
+
+			{# actionHero  #}
+			{% case "actionHero" %}
+				{% include '_molecules/action--hero' with {
+					content: block
+				} %}
+
+			{# featureHero  #}
+			{% case "featureHero" %}
+				{% include '_molecules/feature--hero' with {
+					content: block
+				} %}
+
+			{# highlightCards  #}
+			{% case "highlightCards" %}
+				{% include '_molecules/highlight--cards' with {
+
+					content: block
+				} %}
+
+			{# headsupStats  #}
+			{% case "headsupStats" %}
+				{% include '_molecules/headsup--stats' with {
+					content: block
+				} %}
+
+			{# sectionHeader [] #}
+			{% case "sectionHeader" %}
+				{% include '_molecules/header--section' with {
+					content: block
+				} %}
+			
+			{# article   #}
+			{% case "article" %}
+				{% include '_molecules/article' with {
+					content: block
+				} %}
+
+			{# basic slider  #}
+			{% case "basicSlider" %}
+				{% include '_molecules/slider--basic' with {
+					content: block
+				} %}
+
+			{# profileList  #}
+			{% case "profileList" %}
+				{% include '_molecules/list--features--profile' with {
+					content: block
+				} %}
+
+			{# resourceList  #}
+			{% case "resourceList" %}
+				{% include '_molecules/list--resources' with {
+					content: block
+				} %}
+
+			{% case "infoList" %}
+				{% include '_molecules/list--resources' with {
+					content: block
+				} %}	
+
+			{% case "contactList" %}
+				{% include '_molecules/list--resources' with {
+					content: block
+				} %}		
+
+			{# featureList  #}
+			{% case "featureList" %}
+				{% include '_molecules/list--features' with {
+					content: block
+				} %}
+
+			{# heroSlider  #}
+			{% case "heroSlider" %}
+				{% set blockIndex = blockIndex+1 %}
+
+				{# Set Classes based on position #}
+				{% if blockIndex == 1 %}
+					{% set sliderHeroClasses = 'slider-hero--at-top' %}
+				{% else %}
+					{% set sliderHeroClasses = 'slider-hero--in-article' %}
+				{% endif %}
+
+				{% include '_molecules/slider--hero' with {
+					content: block,
+					classes: sliderHeroClasses
+				} %}
+		
+		{% endswitch %}
+		
+	{% endfor %}
+
+</div>
+	
+{% endblock %}

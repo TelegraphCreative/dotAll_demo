@@ -1,0 +1,21 @@
+{# Link Item #}
+<div class="border-b border-grey-lightest pt-8 pb-8">
+	
+	{# Header #}
+	<header class="item__header">
+
+		<a href="{{card.target}}" class="flex justify-between items-center no-underline text-grey-dark hover:text-blue-light">
+			<h4 class="text-blue text-1md sm:text-2md tr-all">
+				{{card.label}}
+			</h4>
+
+			<div class="cursor-pointer relative">
+				<span class="icon --attachment --md ml-1 ">
+					<svg><use xlink:href="/assets/svg/symbols.svg#{{card.utilityIcon}}"></use></svg>
+
+				</span>
+			</div>
+		
+		</a>
+	</header>
+</div>

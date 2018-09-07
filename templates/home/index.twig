@@ -1,0 +1,30 @@
+{% extends '_layouts/default'%}
+{% block content %}
+
+{# Page Header #}
+{% include '_molecules/hero-headers' with {
+	type: 'page-header--standard',
+	title: 'Articles',
+	classes: ''
+	} 
+%}
+
+<div class="simple-container">
+	<div class="lg:flex lg:flex-wrap mb-lg md:-mx-4 md:pt-10">
+
+		<section class="main-content   lg:w-2/3 md:px-4 ">
+
+			{# Articles #}
+			{% include '_molecules/list--articles' with {
+						content: Articles,
+						classes: ''
+					}
+				%}
+
+		</section>
+
+
+	</div>
+</div>
+	
+{% endblock %}

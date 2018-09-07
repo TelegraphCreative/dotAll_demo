@@ -1,0 +1,21 @@
+{# Article #}
+{% import '_macros/global' as render %}
+
+<div class="mx-auto md:w-3/5 w-full {{render.spacing(content)}}">
+	{# sm:pt-10 sm:mb-10 #}
+	<div class="article md:px-0 px-6 {{render.transitions(content)}}">
+		{{content.article}}
+	</div>
+
+	{% if content.button.count() %}
+	
+	<div class="text-center py-8">
+		{% for button in content.button %}
+			{{render.button(button.target, button.style, button.icon)}}
+		{% endfor %}
+	</div>
+
+	{% endif %}
+		
+
+</div>

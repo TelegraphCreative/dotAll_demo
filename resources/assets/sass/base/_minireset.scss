@@ -1,0 +1,106 @@
+// ----------------------------------------------------------------------------
+// Mini  Reset
+// Generic hover and focus states for svg, a, and inputs
+// ----------------------------------------------------------------------------
+
+//
+// Mini Container (blog and stuff)
+//
+//
+// Footer Placement
+//
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  overflow-x: hidden;
+}
+.js-app-wrap {
+  flex: 1 0 auto; 
+}
+.site-footer {
+  flex-shrink: 0; 
+}
+
+
+//
+// Paragraph Body 
+//
+// p {
+// 	@apply .text-md .leading-normal;
+// }
+
+//
+// Headers
+//
+h1,h2,h3,h4,h5,h6 {
+	@apply .font-normal;
+}
+//
+// Links
+//
+a {
+	@apply .text-blue;
+}
+
+//
+// Hover
+//
+// Set svg to use fill="currentColor"
+a {
+	transition: color $tr1, background $tr1;
+}
+
+//
+// Form Input Focus Transition
+//
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+	
+	transition: background $tr1;
+
+}
+
+//
+// Form Input Focus
+//
+* {
+	outline:none;
+}
+// .focus\:bg-white:focus {
+// 	@apply .bg-white;
+// }
+
+//
+// Placeholder
+//
+::placeholder {
+	@apply .text-grey-dark
+}
+
+// //
+// // Focus to Grey Light
+// //
+// .focus\:bg-grey-light:focus {
+// 	@apply .bg-grey-light;
+// }
+
+
+// //
+// // Form Select
+// //
+// select {
+// 	background: url('../svg/arrows-24px-down.svg') no-repeat 86% center;
+// 	background-size: 14px;
+// 	@apply .appearance-none .rounded-none;
+
+// 	// Fullwidth
+// 	&.w-full {
+// 		background-position: 98% center;
+// 	}
+// }

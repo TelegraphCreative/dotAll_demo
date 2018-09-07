@@ -1,0 +1,38 @@
+//
+// Forms
+//
+.input-field {
+	@apply .border .border-grey-light .p-3 .text-black .text-sm .rounded-sm;
+	-webkit-appearance: none;
+	line-height: 1;
+}
+
+.field-label {
+	@apply .text-grey-dark .text-xs .pb-1;
+}
+
+//
+// Errors
+//
+label.error {
+	@apply .text-sm .mt-1 .text-blue-light .block;
+}
+input.error {
+	@apply .border-blue-light;
+}
+
+//
+// Spinners
+//
+.spinner[type=number] {
+	&::-webkit-inner-spin-button, 
+	&::-webkit-outer-spin-button { 
+	  -webkit-appearance: none; 
+	  margin: 0; 
+	}
+}
+
+// Nasty Autofill Color, Goodbye!
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}

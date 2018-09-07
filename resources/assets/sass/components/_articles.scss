@@ -1,0 +1,177 @@
+// ============================================================================
+//                                   Articles
+// ============================================================================
+
+//
+// Landing
+//
+// .landing {}
+
+// ----------------------------------------------------------------------------
+//
+// Article (standard)
+//
+.article {
+
+	h2,h3 {
+		@apply .max-w-xs .ml-auto .mr-auto;
+	}
+
+	h1 {
+		@apply .text-blue-light .text-md .my-10 .leading-tight;
+	}
+
+	h2 {
+		@apply .mt-12 .mb-10 .text-center .text-2md .text-blue;
+	}
+
+	h3 {
+		@apply .text-center .text-blue  .text-2md .mt-10 .mb-8;
+
+	}
+
+	h4 {
+		@apply .text-left .text-blue  .text-md .mt-10 .mb-4;
+	}
+
+	h5 {
+		@apply .text-left .text-grey-dark  .text-md .mt-8 .mb-4;
+	}
+	h6 {
+		@apply .font-bold .text-base .my-4;
+	}
+	
+	p {
+		@apply .mt-4;
+
+		&:last-child {
+			@apply .mb-0;
+		}
+	}
+
+
+	p, 
+	ul, 
+	ol,
+	blockquote {
+		@apply .text-base .leading-normal;
+	}
+
+	ul, ol {
+		@apply .my-10 .px-6;
+
+		li {
+			@apply .pl-6;
+
+		}
+	}
+
+
+
+	ul {
+		@apply .list-reset;
+		li {
+			@apply .relative;
+
+			&:before {
+				@apply .absolute .pin-l;
+				content: '.';
+				font-size: 1.75rem;
+				line-height: 10px;
+			}
+		}
+	}
+
+	blockquote {
+		@apply .text-blue-light .text-md .my-10  .border-blue-light .border-l-3 .pl-6 .ml-4;
+	}
+
+	.btn {
+		@apply .mr-auto .ml-auto .block .max-w-1xs;
+	}
+
+	&.--btns-left {
+		.btn {
+			@apply .mr-0 .ml-0; 
+		}
+	}
+
+
+	
+	//
+	// Above Small
+	//
+	@screen sm {
+		h1 {
+			@apply .text-lg;
+		}
+		h2,h3 {
+			@apply .max-w-md;
+		}
+		h2 {
+			@apply .text-lg;
+		}
+
+		h3 {
+			@apply .text-lg .mt-12;
+		}
+
+		h4 {
+			@apply .text-2md;
+		}
+
+		p, 
+		ul, 
+		ol,
+		blockquote {
+			@apply .text-md;
+		}
+
+		blockquote {
+			@apply  .text-lg .my-18 .pl-8 .ml-10;
+		}
+
+	}
+
+	//
+	// Above Medium
+	//
+	@screen md {
+		h2 {
+			@apply .text-2xl .mb-14;
+		}
+	}
+
+
+
+	//
+	// Article (info)
+	//
+	&.--info {
+		p {
+			@apply .text-xs .mb-6 .text-grey-dark .leading-normal;
+
+			&:last-child {
+				@apply .mb-0;
+			}
+		}
+		h1,h2,h3,h4,h5,h6 {
+			@apply .uppercase .tracking-wide .text-2xs .text-blue-light .mb-3;
+		}
+
+	
+	}
+
+
+}
+
+
+// ----------------------------------------------------------------------------
+//	Block: Slider
+.landing__slider {
+	@apply .mt-16 .mb-18;
+
+	@screen sm {
+		@apply .mt-18 .mb-lg;
+	}
+}

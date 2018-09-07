@@ -1,0 +1,29 @@
+{# Articles List #}
+
+{% for entry in Articles %}
+
+	{# Article Summary #}
+	<article class="inf-card   border-b border-grey-lightest mt-12 pb-6 clearfix sm:flex">
+		{# {% if entry.singleImage|length %}
+			<div class="md:w-1/4 sm:w-2/5 ">
+					
+				<figure class="sm:pr-6 sm:mb-0 mb-8 hidden sm:block">
+					{{image.single_simple(entry.singleImage[0], 'h-auto')}}
+				</figure>
+
+			</div>
+		{% endif %} #}
+		
+		<div class="md:w-3/4 sm:w-3/5">
+			<h1 class="mb-5 text-2md text-blue   sm:text-lg   md:text-2md   lg:text-lg">
+				<a class="no-underline text-blue hover:text-green block" href="{{entry.url}}">{{entry.title}}</a>
+			</h1>
+			
+			<div class="leading-normal mb-6 text-xs text-grey-dark">
+				{{entry.description}}
+			</div>
+			
+		</div>
+	</article>
+
+{% endfor %}

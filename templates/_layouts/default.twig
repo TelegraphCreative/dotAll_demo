@@ -1,0 +1,33 @@
+
+{% set assets_url = siteUrl~'assets/' %}
+
+{% set Articles = craft.entries.section('articles') %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<title>Longform Articles</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="{{siteUrl}}">
+{% includeCssFile assets_url~'css/app.css' first %}
+
+<body class="font-sans text-base text-black">
+  
+  {% include '_molecules/site--header' %}  
+
+	<div class="app-wrap" data-module="togglesClose">
+
+		<main role="main" class="js-app-wrap">
+			{% block content %}{% endblock %}
+		</main>
+
+		{% include '_molecules/site--footer_form' %}
+		{% include '_molecules/site--footer' %}
+		
+	</div>
+
+	{% include '_molecules/site--footer_scripts' %}
+    
+</body>
+</html>

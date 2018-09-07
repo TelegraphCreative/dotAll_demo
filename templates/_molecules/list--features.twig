@@ -1,0 +1,13 @@
+{# Feature List #}
+{% import '_macros/global' as render %}
+<div class="features-list list--features mx-auto container px-4 {{render.spacing(content)}}"> 
+	<div class="md:flex">
+		{% for block in content.feature %}
+			{% include '_molecules/feature' with {
+					content: block
+				} %}	
+		{% endfor %}
+	</div>
+</div>
+
+

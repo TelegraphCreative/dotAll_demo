@@ -1,0 +1,30 @@
+{% import '_macros/global' as render %}
+
+{# Block: Hero Slider #}
+<div data-module="slider" class="slider --hero slider--hero    {{render.spacing(content)}}">
+	<div class="{{classes}}">
+	<ul class="js-slider list-reset" >
+		{% for slide in content.slides %}
+
+			
+			<li class="js_slide bg-blue-lighter">
+	      <figure class="img {{render.ratio(content)}} bg-grey-lightest ">
+	        {{render.single_image(slide.image.one())}}	
+	      </figure>
+				
+				
+	      {% if slide.caption %}
+	      
+		      <figcaption class="px-6 py-8 sm:px-10 content-fades-in tr-all-3">
+		      	<h4 class="text-blue text-md sm:text-lg max-w-lg block sm:mt-14 sm:mb-16">{{slide.caption}}</h4>
+		      	
+		      </figcaption>
+
+	      {% endif %}
+
+	    </li>
+		{% endfor %}
+
+	</ul>
+	</div>
+</div>

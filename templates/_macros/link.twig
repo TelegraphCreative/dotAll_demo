@@ -1,0 +1,49 @@
+{% macro button(link, class) %}
+	{% spaceless %}
+		{%- if link -%}
+			<a href="{{ link.url }}" class="{{ class | default('btn') }}" target="{{link.target}}">
+				{{ link.text | raw}} 
+			</a>
+		{%- endif -%}
+	{% endspaceless %}
+{% endmacro %}
+
+
+{% macro simple(link, class) %}
+	{% spaceless %}
+		{%- if link -%}
+		<a href="{{ link.url }}" class="{{ class | default('') }}" target="{{link.target}}">{{ link.text | raw}} 
+			{% if link.target is not empty -%} 
+			{%- endif -%} </a>
+		{%- endif -%}
+	{% endspaceless %}
+{% endmacro %}
+
+{% macro icon(link, class, icon) %}
+	{% spaceless %}
+		{%- if link -%}
+		<a href="{{ link.url }}" class="{{ class | default('') }} --has-icon" target="{{link.target}}">{{ link.text | raw}} 
+			{% if link.target is not empty -%} 
+			{%- endif -%} 
+			<span class="icon --sm ml-1">
+				<svg><use xlink:href="/assets/svg/symbols.svg#{{icon}}"></use></svg>
+			</span>
+		</a>
+		{%- endif -%}
+	{% endspaceless %}
+{% endmacro %}
+
+
+{% macro is_active(segment, class) %}
+	{% set secondSeg = craft.request.getSegment(2) %}
+	{% if secondSeg == segment%}
+	 	{{ class | default('is-active')}}
+	{% endif %}
+{% endmacro %}
+
+{% macro is_not_active(segment, class) %}
+	{% set secondSeg = craft.request.getSegment(2) %}
+	{% if secondSeg != segment%}
+		{{ class | default('is-not-active')}}
+	{% endif %}
+{% endmacro %}

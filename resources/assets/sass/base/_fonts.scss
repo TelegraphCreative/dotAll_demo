@@ -1,0 +1,39 @@
+ // *
+ // * @license
+ // * MyFonts Webfont Build ID 3544399, 2018-03-19T22:29:20-0400
+ // * 
+ // * The fonts listed in this notice are subject to the End User License
+ // * Agreement(s) entered into by the website owner. All other parties are 
+ // * explicitly restricted from using the Licensed Webfonts(s).
+ // * 
+ // * You may obtain a valid license at the URLs below.
+ // * 
+ // * Webfont: FF Mark Web Pro Book by FontFont
+ // * URL: https://www.myfonts.com/fonts/fontfont/mark/pro-book/
+ // * 
+ // * Webfont: FF Mark Web Pro Book Italic by FontFont
+ // * URL: https://www.myfonts.com/fonts/fontfont/mark/pro-book-italic/
+ // * 
+ // * Webfont: FF Mark Web Pro Bold by FontFont
+ // * URL: https://www.myfonts.com/fonts/fontfont/mark/pro-bold/
+ // * 
+ // * 
+ // * License: https://www.myfonts.com/viewlicense?type=web&buildid=3544399
+ // * Licensed pageviews: 50,000
+ // * Webfonts copyright: 2013 published by FontShop International GmbH
+ // * 
+ // * © 2018 MyFonts Inc
+
+
+$fontpath: '../fonts/FF-Mark/';
+@import url("//hello.myfonts.net/count/36154f");
+
+  
+@font-face {font-family: 'FFMark';src: url('#{$fontpath}36154F_0_0.eot');src: url('#{$fontpath}36154F_0_0.eot?#iefix') format('embedded-opentype'),url('#{$fontpath}36154F_0_0.woff2') format('woff2'),url('#{$fontpath}36154F_0_0.woff') format('woff'),url('#{$fontpath}36154F_0_0.ttf') format('truetype'); font-weight:400; }
+ 
+  
+@font-face {font-family: 'FFMark';src: url('#{$fontpath}36154F_1_0.eot');src: url('#{$fontpath}36154F_1_0.eot?#iefix') format('embedded-opentype'),url('#{$fontpath}36154F_1_0.woff2') format('woff2'),url('#{$fontpath}36154F_1_0.woff') format('woff'),url('#{$fontpath}36154F_1_0.ttf') format('truetype'); font-weight:400; font-style: italic; }
+ 
+  
+@font-face {font-family: 'FFMark';src: url('#{$fontpath}36154F_2_0.eot');src: url('#{$fontpath}36154F_2_0.eot?#iefix') format('embedded-opentype'),url('#{$fontpath}36154F_2_0.woff2') format('woff2'),url('#{$fontpath}36154F_2_0.woff') format('woff'),url('#{$fontpath}36154F_2_0.ttf') format('truetype'); font-weight:600; }
+ 

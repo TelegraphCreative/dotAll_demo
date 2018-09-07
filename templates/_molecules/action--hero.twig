@@ -1,0 +1,36 @@
+{% import '_macros/global' as render %}
+
+
+<div class="hero--cta action--hero {{render.spacing(content)}} {{render.align(content)}}">
+
+	<div class="hero--cta__inner  {{render.colors(content)}} {{render.pattern(content)}} {{render.overlay(content)}} " {{render.bgImg(content)}}> 
+
+
+		<div class="content relative z-10 {{render.transitions(content)}} ">
+
+			<header class="hero-cta__title">				
+				{% if content.header %}
+					<h4>{{content.header}}</h4>
+				{% endif %}
+				
+			</header>
+
+			{% if content.description %}
+				<div class="hero-cta__descr__row">
+					<div class="hero-cta__descr">
+						{{content.description}}
+					</div>
+				</div>
+			{% endif %}
+			
+			{% if content.buttons.count() %}
+				{% for button in content.buttons %}
+						{{render.button(button.target, button.style, button.icon)}}
+				{% endfor %}
+			{% endif %}
+			
+		</div>
+
+
+	</div>
+</div>

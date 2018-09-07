@@ -1,0 +1,91 @@
+// ============================================================================
+// Active/Inactive Menu
+//
+.main-menu-bar {
+
+  // Active
+  &.active {
+
+    .main-menu,
+    .menu__utility-bar {
+      
+      @apply .block;
+      
+    }
+
+  }
+}
+
+// ============================================================================
+// Active/Inactive Menu
+//
+.main-menu__toggle {
+  
+
+  @apply .absolute;
+  right: 1rem;
+  top: 1.375rem;
+
+
+
+
+  width: 1.75rem;
+  height: 1.75rem;
+  transform: rotate(0deg);
+  
+
+}
+
+.main-menu__toggle span {
+  @apply .bg-blue;
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+
+.main-menu__toggle span:nth-child(1) {
+  top: 0px;
+}
+
+.main-menu__toggle span:nth-child(2),.main-menu__toggle span:nth-child(3) {
+  top: 7px;
+}
+
+.main-menu__toggle span:nth-child(4) {
+  top: 14px;
+}
+
+.main-menu__toggle.active span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.main-menu__toggle.active span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.main-menu__toggle.active span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.main-menu__toggle.active span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+

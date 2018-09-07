@@ -1,0 +1,100 @@
+{% extends '_layouts/default'%}
+
+{% set longForm = entry.longformArticle %}
+
+{% block content %}
+
+{# Page Header #}
+{% include '_molecules/hero-headers' with {
+	type: 'page-header--standard',
+	title: entry.title,
+	classes: ''
+	} 
+%}
+
+<section class="landing mb-lg simple-container --wide" data-module="accordion">
+
+	{% for block in longForm.level(1) %}
+		{% set blockIndex = 0 %}
+		{% switch block.type.handle %}
+
+
+			{# actionHero [ ] #}
+			{% case "actionHero" %}
+				{% include '_molecules/action--hero' with {
+					content: block
+				} %}
+
+			{# highlightCards [x] #}
+			{% case "highlightCards" %}
+				{% include '_molecules/highlight--cards' with {
+					content: block.children
+				} %}
+
+			{# headsupStats [x] #}
+			{% case "headsupStats" %}
+				{% include '_molecules/headsup--stats' with {
+					content: block
+				} %}
+
+			{# sectionHeader [x] #}
+			{% case "sectionHeader" %}
+				{% include '_molecules/header--section' with {
+					content: block
+				} %}
+			
+			{# article [x] #}
+			{% case "article" %}
+				{% include '_molecules/article' with {
+					content: block
+				} %}
+
+			{# profileList [x] #}
+			{% case "profileList" %}
+				{% include '_molecules/list--features--profile' with {
+					content: block
+				} %}
+
+			{# resourceList [ ] #}
+			{% case "resourceList" %}
+				{% include '_molecules/list--resources' with {
+					content: 'list--resources'
+				} %}	
+
+			{# featureList [x] #}
+			{% case "featureList" %}
+				{% include '_molecules/list--features' with {
+					content: block.children
+				} %}
+
+			{# heroSlider [x] #}
+			{% case "heroSlider" %}
+				{% set blockIndex = blockIndex+1 %}
+
+				{# Set Classes based on position #}
+				{% if blockIndex == 1 %}
+					{% set sliderHeroClasses = 'm-auto max-w-2xl mb-8 -mt-6 px-6 sm:px-0 sm:mb-0 pt-4 sm:-mt-16' %}
+				{% else %}
+					{% set sliderHeroClasses = 'm-auto max-w-2xl mb-8 px-6 sm:px-0 sm:mb-0 pt-4' %}
+				{% endif %}
+
+				{% include '_molecules/slider--hero' with {
+					content: block,
+					classes: sliderHeroClasses
+				} %}		
+
+
+
+			{% default %}
+				<ul>
+					<li>{{block.type}}</li>
+				</ul>
+				
+		
+		{% endswitch %}
+		
+	{% endfor %}
+
+</div>
+	
+{% endblock %}

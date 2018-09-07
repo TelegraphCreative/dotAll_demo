@@ -1,0 +1,33 @@
+
+
+
+{# Accordion Item #}
+<div class="js-accordion-item {% if loop.index == 1 %}active{% endif %}  tr-all-3  list-accordion__item    border-b border-grey-lightest pt-8 pb-8">
+	
+	{# Header #}
+	<header class="js-accordion-toggle  text-grey-dark hover:text-blue-light cursor-pointer flex justify-between  item__header items-center">
+		<h4 class="text-blue text-1md sm:text-2md tr-all">{{card.header}}</h4>
+		
+		<div class="relative">
+			<span class="icon --add --md ml-1 tr-all-3">
+				<svg><use xlink:href="/assets/svg/symbols.svg#add"></use></svg>
+			</span>
+			<span class="icon --subtract --md ml-1 absolute pin-t tr-all-3">
+				<svg><use xlink:href="/assets/svg/symbols.svg#subtract"></use></svg>
+			</span>
+		</div>
+	</header>
+	
+	{# Content #}
+	<div class="item__content  article --info    tr-all-3">
+		<div class="sm:flex sm:flex-justify pt-8">
+			<div class=" content__col   sm:w-2/3 sm:pr-6 sm:border-r border-grey-lightest">
+				{{card.description}}
+				
+			</div>
+			<div class="content__col sm:w-1/3 sm:pl-8">
+				{{card.additionalInfo}}
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,111 @@
+//
+// Table Normalizer
+//
+.data-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  thead {
+		@apply .bg-blue-dark .text-white .text-base .border-blue-dark .border-t .border-l .border-r;
+		
+		th {
+			@apply .p-4 .font-normal;
+		}
+
+	}
+
+	tbody {
+		@apply .border-l .border-r .border-b .border-grey-light .leading-tight;
+
+		td {
+			@apply .text-1xs .text-grey-dark .p-4 .border-r .border-b .border-grey-light;
+		}
+
+		tr {
+
+			&:nth-child(even) td {
+				@apply .bg-grey-lightest;
+			}
+			@screen sm {
+				td:last-child {
+					@apply .border-r-0
+				}
+			}
+		}
+
+	}
+
+}
+	
+@media only screen and (max-width:576px) {
+	.data-table {
+
+		tbody {
+			@apply .border-r-0 .border-l-0 .border-b-0;
+
+			td {
+				@apply .border-l .border-t .border-b-0;
+			}
+		}
+
+		thead {
+	    border: none;
+	    clip: rect(0 0 0 0);
+	    height: 1px;
+	    margin: -1px;
+	    overflow: hidden;
+	    padding: 0;
+	    position: absolute;
+	    width: 1px;
+	  }
+
+   
+	  
+	  td {
+	  	@apply .block .text-right .relative;
+	  	padding-top: 1.875rem;
+
+	  	&:before {
+		    content: attr(data-label);
+		    @apply .float-left .font-bold .text-2xs .uppercase .tracking-normal .absolute .pin-t .pin-l .bg-grey-lightest .block .p-1 .text-grey-dark .z-10;
+		  }
+	  } 
+
+	  
+	  td:last-child {
+	    border-bottom: 0;
+	  }
+
+	  tr {
+	   	@apply .block .mb-3 .border-b .border-grey-light;
+
+	   	&:nth-child(even) {
+	   		td {
+	   			&:before {
+	   				@apply .bg-grey-light .text-grey-darker;
+	   			}
+	   		}
+	   	}
+	  }
+  }
+  
+ 
+}
+
+@screen md {
+	.data-table {
+		thead {
+			@apply .text-2md;
+			th {
+				@apply .p-6;
+			}
+		}
+
+		tbody {
+			td {
+				@apply .p-6 .text-sm;
+			}
+		}
+	
+	}
+
+}

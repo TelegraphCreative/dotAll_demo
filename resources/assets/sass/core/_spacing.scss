@@ -1,0 +1,119 @@
+/*
+	# Responsive Spacing
+	---
+	Anything under 32 can be done with direct utilities
+	sm/md/lg
+*/
+
+/*32/48*/ // [x]
+// --m 
+.space-b-1 {
+	@apply mb-10;
+}
+
+@screen md {
+	.space-b-1 {
+		@apply mb-14;
+	}
+}
+	// --p
+	.space-bp-1 {
+		@apply pb-8;
+	}
+
+	@screen md {
+		.space-bp-1 {
+			@apply pb-md;
+		}
+	}
+
+/*32/48/64*/ // [x]
+// --m
+.space-b-2 {
+	@apply mb-10;
+}
+@screen md {
+	.space-b-2 {
+		@apply mb-14;
+	}
+}
+@screen lg {
+	.space-b-2 {
+		@apply mb-18;
+	}
+}
+	// --p 
+	.space-bp-2 {
+		@apply pb-8;
+	}
+	@screen md {
+		.space-bp-2 {
+			@apply pb-md;
+		}
+	}
+	@screen lg {
+		.space-bp-2 {
+			@apply pb-md2;
+		}
+	}
+
+/*48/64/92*/ // [x]
+.space-b-3 {
+	@apply mb-14;
+}
+@screen md {
+	.space-b-3 {
+		@apply mb-18;
+	}
+}
+@screen lg {
+	.space-b-3 {
+		@apply mb-lg;
+	}
+}
+	// --p
+	.space-bp-3 {
+		@apply pb-md;
+	}
+	@screen md {
+		.space-bp-3 {
+			@apply pb-md2;
+		}
+	}
+	@screen lg {
+		.space-bp-3 {
+			@apply pb-lg;
+		}
+	}
+
+
+/* 64/92/160 */ // [x]
+.space-b-4 {
+	@apply mb-18;
+}
+@screen md {
+	.space-b-4 {
+		@apply mb-lg;
+	}
+}
+@screen lg {
+	.space-b-4 {
+		@apply mb-xxl;
+	}
+}
+	// --p 
+	.space-bp-4 {
+		@apply pb-md2;
+	}
+	@screen md {
+		.space-bp-4 {
+			@apply pb-lg;
+		}
+	}
+	@screen lg {
+		.space-bp-4 {
+			@apply pb-xxl;
+		}
+	}
+
+

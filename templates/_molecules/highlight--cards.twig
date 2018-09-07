@@ -1,0 +1,18 @@
+{% import '_macros/global' as render %}
+
+{# Highlight Cards #}
+{# sm:pt-10 sm:mb-10 #}
+<div class="cards--features border-list mx-auto max-w-2xl  {{render.spacing(content)}}"> 
+
+	{# items-start #}
+	<div class="clearfix sm:flex px-4  pt-10 sm:pt-16 border-t border-b border-grey-lightest">	
+	
+			{# Card #}
+			{% for card in content.card %}
+					{% include '_molecules/card' with {
+						content: card
+					} %}
+			{% endfor %}
+		
+	</div>
+</div>

@@ -1,0 +1,44 @@
+
+//
+// Default Checkbox Styles
+//
+.check-radio-input {
+	input {
+		@apply .absolute;
+	  left: -9999px;
+	}
+	// Checkbox
+	.icon {
+		@apply .relative .cursor-pointer;
+
+		svg {
+			opacity: 0;
+			padding: 3px;
+		}
+
+		&:before {
+			content: '';
+		  @apply .border .border-grey-light .w-6 .h-6 .pin-l .pin-t .absolute .rounded-sm;
+		}
+	}
+
+
+	// Checked
+	input:checked ~ .icon {
+		svg {
+			opacity: 1;
+		}
+	}
+}
+
+
+//
+// Number Spinners
+//
+.spinner[type=number] {
+	&::-webkit-inner-spin-button, 
+	&::-webkit-outer-spin-button { 
+	  -webkit-appearance: none; 
+	  margin: 0; 
+	}
+}

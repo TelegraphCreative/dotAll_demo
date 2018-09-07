@@ -1,0 +1,70 @@
+{# Single, Simple #}
+{% macro single_simple(image, class) %}
+	<img data-src="{{ image.url }}" src="{{image.getUrl('lazyload')}}" alt="{{image.title}}" title="{{ image.title }}" class="{{ class }} lazyload" height="{{ image.height }}" width="{{ image.width }}">
+{% endmacro %}
+
+{# Single, Transform #}
+{% macro single_transform(image, transform, class) %}
+	<img src="{{ image.getUrl(transform) }}" alt="{{image.title}}" title="{{ image.title }}" class="{{ class }}" width="{{ image.getWidth(transform) }}" height="{{ image.getHeight(transform) }}">
+{% endmacro %}
+
+
+{# Multiple, Simple #}
+{% macro multiple_simple(images, class) %}
+	{% for image in images %}	
+		<img src="{{ image.url }}" alt="{{image.title}}" title="{{ image.title }}" class="{{ class }}" height="{{ image.height }}" width="{{ image.width }}">
+	{% endfor %}
+{% endmacro %}
+
+
+{# Multiple, Transform #}
+{% macro multiple_transform(images, transform, class) %}
+	{% for image in images %}	
+		<img src="{{ image.getUrl(transform) }}" alt="{{image.title}}" title="{{ image.title }}" class="{{ class }}">
+	{% endfor %}
+{% endmacro %}
+
+
+{# == Sprite == #}
+{% macro sprite(id, classes) %}
+	<span class='sprite-{{id}} sprite'>
+	    <svg viewBox="0 0 1 1" class="{{classes}}"><use xlink:href='/assets/images/icons.svg#{{id}}'></use></svg>
+	</span>
+{% endmacro %}
+
+
+{% macro tag(images, transform, class) %}
+	{% for image in images.limit(1) %}	
+		<img src="{{ image.getUrl(transform) }}" alt="{{image.title}}" title="{{ image.title }}" class="{{ class }}">
+	{% endfor %}
+{% endmacro %}
+
+
+{% macro tagLink(link, images, transform, class) %}
+	{%- if link -%}
+		<a href="{{ link.url }}" target="{{link.target}}">
+	{%- endif -%}
+	{% for image in images.limit(1) %}	
+		<img src="{{ image.getUrl(transform) }}" alt="{{image.title}}" title="{{ image.title }}" class="{{ class }}">
+	{% endfor %}
+	{%- if link -%}
+	</a>
+	{%- endif -%}
+
+{% endmacro %}
+
+
+{% macro tags(images, transform, class, limit) %}
+	{% for image in images.limit(limit) %}	
+		<img src="{{ image.getUrl(transform) }}" alt="{{image.title}}" title="{{ image.title }}" class="{{ class }}">
+	{% endfor %}
+{% endmacro %}
+
+
+{% macro url(images,transform) %}
+    {%- for image in images.limit(1) -%}	
+		{{- image.getUrl(transform) -}}
+	{%- endfor -%}
+{% endmacro %}
+
+

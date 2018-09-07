@@ -1,0 +1,41 @@
+// Start Animations
+.start-animations {
+	&.inView--a-fade-in {
+		animation-name: fadeIn;
+	}
+	&.inView--a-fade-in-up {
+		animation-name: fadeInUp;
+	}
+	&.inView--a-fade-in-right {
+		animation-name: fadeInRight;
+	}
+	&.inView--a-fade-in-left {
+		animation-name: fadeInLeft;
+	}
+}
+
+// Reverse Animations
+
+.inView--a-fade-in {
+	animation-name: fadeOut;
+	animation-fill-mode: both;
+	animation-direction: normal;
+}
+
+.inView--a-fade-in-up {
+	animation-name: fadeOutDown;
+	animation-fill-mode: both;
+	animation-direction: normal;
+}
+
+.inView--a-fade-in-right {
+	animation-name: fadeOutRight;
+	animation-fill-mode: both;
+	animation-direction: normal;
+}
+
+.inView--a-fade-in-left {
+	animation-name: fadeOutLeft;
+	animation-fill-mode: both;
+	animation-direction: normal;
+}

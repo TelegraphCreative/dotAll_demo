@@ -1,0 +1,19 @@
+{% import '_macros/global' as render %}
+
+<div class="list-accordion list--resources mx-auto md:w-3/5 w-full md:px-0 px-6 {{render.spacing(content)}} {{render.transitions(content)}}">
+
+	{% if content.type == 'resourceList' %}
+		{% include '_molecules/list--resources__link' with {
+			card: content.linkDownload
+		} %}
+	{% elseif content.type == 'infoList' %}
+		{% include '_molecules/list--resources__info' with {
+			card: content.info
+		} %}
+	{% elseif content.type == 'contactList' %}
+		{% include '_molecules/list--resources__contact' with {
+			card: content.contact
+		} %}
+	{% endif %}
+	
+</div>

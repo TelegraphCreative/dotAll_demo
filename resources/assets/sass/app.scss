@@ -1,0 +1,60 @@
+//
+// WEAT 
+//
+
+@tailwind preflight;
+
+
+[v-cloak] {display: none;}
+
+@import 'base/settings';
+@import 'base/minireset';
+@import 'base/fonts';
+
+
+@import 'components/main-menu';
+@import 'components/toggle-drop--js';
+
+
+@import 'components/menu-toggle';
+
+@import 'components/menu-breadcrumbs';
+
+
+@import 'core/spacing';
+@import 'core/patterns';
+@import 'core/overlays';
+// @import 'core/transitions';
+@import 'core/transitions--animations';
+@import 'core/transitions--start';
+@import 'base/utils';
+@import 'components/images';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/checkboxes-radios';
+@import 'components/icons';
+@import 'components/patterns';
+
+
+@import 'components/action--hero';
+@import 'components/aside__category-tags';
+@import 'components/modal';
+@import 'components/articles';
+@import 'components/lists';
+@import 'components/tooltip-lean';
+@import 'components/calendar';
+@import 'components/table';
+
+
+
+@import 'vendor/flickity/_all';
+@import 'vendor/choices/_all';
+@import 'components/sliders';
+
+// @import 'components/site-footer';
+
+@tailwind utilities;
+@tailwind screens;
+
+
+@import 'debug/ie-11';

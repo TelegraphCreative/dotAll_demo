@@ -1,0 +1,37 @@
+.modal__shown {
+	overflow: hidden;
+	position: fixed;
+	width:100%
+}
+
+.enterModal { 
+	background: rgba(255,255,255,.5);
+	opacity: 1;
+	visibility: visible;
+	
+	> div > button {
+		visibility: visible;
+		opacity: 1;
+		
+		&:focus {
+			outline: none
+		}
+	}
+}
+
+.modal__hidden .enterModal {
+	visibility: hidden;
+	opacity: 0;
+	transition: all .4s;
+	
+	> div > button { 
+		visibility: hidden;
+		opacity: 0;
+		transition: all .2s;
+	}
+}
+
+.modalLogo {
+	max-width:10rem;
+	width:100%
+}

@@ -1,0 +1,71 @@
+// ----------------------------------------------------------------------------
+// Lists
+// ----------------------------------------------------------------------------
+
+//
+// Border List
+//
+.border-list {
+	.border__item:last-child {
+		border: none;
+	}
+	
+}
+
+//
+// Portrait List
+//
+.portraits-list {
+	.portrait__group:last-child {
+		@apply .mb-0;
+	}
+}
+
+
+//
+// Stat List
+//
+.stat-list {
+	.stat__group:last-child {
+		@apply .mb-0;
+	}
+}
+
+//
+// Accordion List
+//
+.list-accordion {
+	header {
+		&:hover {
+			h4 {
+				@apply .text-blue-light;
+			}
+		}
+	}
+}
+
+// >> JS Accordion Item
+.js-accordion-item {
+	// Inactive
+	.item__content {
+		@apply .overflow-hidden .opacity-0;
+		max-height: 0;
+	}
+	.--subtract {
+		@apply .opacity-0;
+	}
+
+	// Active
+	&.active {
+		.item__content {
+			@apply .overflow-visible .opacity-100;
+			max-height: 600px;
+		}
+		.--add {
+			@apply .opacity-0;
+		}
+		.--subtract {
+			@apply .opacity-100;
+		}
+	}
+}

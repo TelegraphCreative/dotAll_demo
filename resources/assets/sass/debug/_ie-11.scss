@@ -1,0 +1,25 @@
+//
+// IE
+//
+html.is-ie11 {
+
+	// Disable Flexbox Sticky Footer 
+	body {
+		display: inherit;
+		height: auto;
+
+	}
+
+	.js-app-wrap {
+	  flex: inherit; 
+	}
+	.site-footer {
+	  flex-shrink: inherit; 
+	}
+	
+	// Disable SVG BG Pattern
+	.background-pattern {
+		background-image: none !important;
+	}
+
+}

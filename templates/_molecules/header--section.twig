@@ -1,0 +1,14 @@
+{# Section Header #}
+{% import '_macros/global' as render %}
+
+<header class="text-center ">
+	<h2 class="text-blue text-lg sm:text-xl mb-2">{{content.header}}</h2>
+	<h4 class="text-blue-light text-1md mb-8">{{content.subheader}}</h4>
+	<div class="text-grey-dark text-md  max-w-sm mx-auto">{{content.description}}</div>
+	
+	<div class="text-center py-8">
+		{% for button in content.buttons %}
+				{{render.button(button.linkUrl, button.style, button.icon)}}
+		{% endfor %}
+		</div>
+</header>

@@ -1,0 +1,17 @@
+<div class="list-accordion list--resources md:px-0 px-6 sm:pt-10 sm:mb-10 m-auto md:w-3/5 w-full">
+
+
+{% include '_molecules/header--divider' with {
+		content: block
+	} 
+%}
+{% for profile in content.children %}
+	
+	{% include '_molecules/profile' with {
+			content: profile
+		} %}
+	
+{% endfor %}
+
+</div>
+

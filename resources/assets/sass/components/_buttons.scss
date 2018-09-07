@@ -1,0 +1,180 @@
+// ============================================================================
+// Buttons
+// ============================================================================
+
+//
+// Button
+//
+.btn {
+	// Default
+	@apply .bg-blue .inline-block .max-w-1xs .w-full .text-white .text-sm .no-underline .text-center .py-4 .px-6 .rounded-full .cursor-pointer .tr-all;
+	
+	// Default Hover
+	&:hover {
+		@apply .bg-green;
+	}
+
+	// Small
+	&.btn--sm {
+		@apply .px-5 .text-1xs .w-auto;
+		max-width: inherit;
+	}
+
+	//
+	// Text
+	//
+	&.--text {
+		@apply .bg-transparent .text-blue-light .relative .w-auto; 
+		max-width: inherit;
+
+		// if icon
+		&.--has-icon {
+			padding-bottom: 1.125rem;
+		}
+		.text {
+			@apply .relative; 
+			top: 1px;
+		}
+
+		&:hover {
+
+			@apply .text-white .bg-blue;
+
+		}
+
+	}
+
+	//
+	// Auto Width
+	//
+	&.--auto-w {
+		@apply .w-auto; 
+		max-width: inherit;
+	}
+
+	//
+	// Width
+	//
+	&.--full-w {
+		@apply .w-full; 
+		max-width: inherit;
+	}
+
+	//
+	// Special
+	//
+	&.--special:hover {
+		.hover-show {
+			opacity: 1;
+		}
+		.hover-hide {
+			opacity: 0;
+		}
+	}
+
+
+	//
+	// Outline
+	//
+	&.--outline {
+		@apply .bg-transparent .border .border-grey-light .text-grey-dark;
+
+		&:hover {
+			@apply .bg-green .text-white .border-green;
+		}
+
+	}
+
+	&.--outline-blue {
+		@apply .bg-transparent .border .border-blue-light .text-blue;
+
+		&:hover {
+			@apply .bg-green .text-white .border-green;
+		}
+
+	}
+
+	//
+	// Disabled
+	//
+	&.--disabled {
+		@apply .bg-grey-light .text-grey .pointer-events-none;
+	}
+
+	//
+	// Light Blue
+	//
+	&.--light-blue {
+		@apply .bg-blue-light;
+
+		&:hover {
+			@apply .bg-blue-dark
+		}
+	}
+	
+	//
+	// Dark Blue
+	//
+	&.--dark-blue {
+		@apply .bg-blue-dark;
+
+		&:hover {
+			@apply .bg-green
+		}
+	}
+
+	//
+	// Large
+	//
+	@screen lg {
+
+		// Large Buton (matches height of button that has md icon)
+		&.--lg {
+			padding-top: 1.25rem;
+			padding-bottom: 1.25rem;
+		}
+		
+	}
+
+	//
+	// Icon
+	//
+	.icon {
+		position: relative;
+		top:2px;
+	}
+
+
+}
+
+
+// Valid Forms:  Active Loading Spinner to Buttons:
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+form {
+	.btn.btn--active {
+		@apply .relative .text-blue;
+
+		&:hover {
+			@apply .text-green;
+		}
+		
+		&:after {
+			content: '';
+		  box-sizing: border-box;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  width: 24px;
+		  height: 24px;
+		  margin-top: -12px;
+		  margin-left: -12px;
+		  border-radius: 50%;
+		  border: 1px solid #D6EFF7;
+		  border-top-color: #07d;
+		  animation: spinner .6s linear infinite;
+		}
+	}
+}

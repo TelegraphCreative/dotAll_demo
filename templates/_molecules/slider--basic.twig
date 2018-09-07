@@ -1,0 +1,33 @@
+
+{% import '_macros/global' as render %}
+
+<div class="mx-auto md:w-3/5 w-full {{render.spacing(content)}} {{render.transitions(content)}}">
+
+	{% if content.slides.count() > 1 %}
+
+		<div class="slider slider--standard" data-module="slider">
+			
+		  <ul class="js-slider list-reset" >
+		  	
+		  	{% for img in content.slides %}
+			    <li class="js_slide">
+			      <div class="img {{render.ratio(content)}}">
+			        {{render.single_image(img,'')}}	
+			      </div>
+			    </li>
+
+		    {% endfor %}
+		    
+		  </ul>
+
+		</div>
+
+	{% else %}
+		
+		<figure class="img is16by9 bg-grey-lightest md:mb-4">
+	      {{render.single_image(content.slides.one(),'absolute pin-t pin-l')}}  
+	    </figure>
+
+	{% endif %}
+
+</div>

@@ -1,0 +1,24 @@
+{# Site Footer Scripts #}
+{% includeJsFile assets_url~'js/app.js'  %}
+{% includeJsFile 'https://cdnjs.cloudflare.com/ajax/libs/scrollmonitor/1.2.0/scrollMonitor.js'  %}
+
+{% set transitions %}
+
+	var sections = document.querySelectorAll('.inView');
+
+	[].forEach.call(sections, function(section) {
+			var sectionWatcher = scrollMonitor.create(section, -150);
+			sectionWatcher.enterViewport(function() {
+			    setTimeout(function() {
+			    	section.classList.add('start-animations');
+			    }, 1);
+			});
+			sectionWatcher.exitViewport(function() {
+			    setTimeout(function() {
+			    	section.classList.remove('start-animations');
+			    }, 1);
+			});
+	});
+
+{% endset %}
+{% includeJs transitions %}

@@ -1,0 +1,84 @@
+//
+// Utils
+//
+//
+// Simple Container (single breakpoint)
+//
+.simple-container {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  &.--x-0 {
+  	padding-right: 0;
+	  padding-left: 0;
+  }
+}
+
+@screen md {
+	.simple-container {
+	    max-width: 70rem;
+	    // padding-right: 1rem;
+	    // padding-left: 1rem;
+	    @apply .w-full .m-auto;
+	}
+	&.--wide {
+  	max-width: 80rem; // 1280	
+  }
+}
+//
+// Transitions
+//
+
+.tr-all {
+	transition: all $tr1;
+}
+.tr-all-2 {
+	transition: all $tr2;
+}
+.tr-all-3 {
+	transition: all $tr3;
+}
+
+
+//
+// Relative Positioning
+//
+.top-1 {
+	top: 1px;
+}
+.top-2 {
+	top: 2px;
+}
+
+
+
+
+//
+// Sticky
+//
+@screen lg {
+	.sticky {
+		position: sticky;
+	}
+}
+
+
+//
+// Grow
+//
+.grow { 
+    backface-visibility: hidden; 
+    transform: translateZ( 0 );
+    transition: transform .25s ease-out
+}
+.grow:hover { transform: scale( 1.05 ) }
+
+.grow:hover .grow:focus { transform: none }
+
+
+//
+// Misc
+//
+.icon-youtube {
+	@apply .relative;
+	top: -2px;
+}
