@@ -4,10 +4,8 @@
 
 <div class="feature__group   w-full block text-center max-w-xs ml-auto mr-auto mb-14 md:w-1/3 md:w-1/3 md:mb-0 sm:px-2">
 
-
-	{% if block.image.count() %}
+	{% if block.image.count()%}
 		{# Image #}
-
 		<div class="m-auto mb-6 w-3/5">
 			<div class="img is1x1 relative">
 				{{render.single_image(block.image.one(), block.borderRadius~' absolute pin-t pin-l w-full h-full')}}	
@@ -17,7 +15,7 @@
 	{% else %}
 
 		{# Spot Icon #}
-		{% if block.spotIcon != 'none' %}
+		{% if block.spotIcon != 'no-icon' %}
 			<div class="m-auto mb-6 w-32">
 				<div class="img is1x1 relative">
 							<img src="/assets/svg/icon--{{block.spotIcon}}.svg" class="absolute pin-t pin-l w-full h-full">
@@ -44,7 +42,9 @@
 
 	{# Action #}
 	{% if block.button.count() %}
-		{{render.button(block.button.one().linkUrl, block.button.one().style, block.button.one().icon)}}
+		<div class="pt-6">
+			{{render.button(block.button.one().target, block.button.one().style, block.button.one().icon)}}
+		</div>
 	{% endif %}
 	
 	

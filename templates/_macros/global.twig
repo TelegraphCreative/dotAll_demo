@@ -1,107 +1,107 @@
-{# Buttons #}
-{% macro button(link, class, icon) %}
-	{% spaceless %}
-		{%- if link -%}
-		<a href="{{ link.url }}" class="{{ class | default('') }} {% if icon != 'no-icon' %}--has-icon{% endif %}" target="{{link.target}}">{{ link.text | raw}} 
-		{% if icon != 'no-icon' %}
-		<span class="icon --sm ml-1">
-			<svg><use xlink:href="/assets/svg/symbols.svg#{{icon}}"></use></svg>
-		</span>
-		{% endif %}
-		</a>
-		{%- endif -%}
-	{% endspaceless %}
-{% endmacro %}
+	{# Buttons #}
+	{% macro button(link, class, icon) %}
+		{% spaceless %}
+			{%- if link -%}
+			<a href="{{ link.url }}" class="{{ class | default('') }} {% if icon != 'no-icon' %}--has-icon{% endif %}" target="{{link.target}}">{{ link.text | raw}} 
+			{% if icon != 'no-icon' %}
+			<span class="icon --sm ml-1">
+				<svg><use xlink:href="/assets/svg/symbols.svg#{{icon}}"></use></svg>
+			</span>
+			{% endif %}
+			</a>
+			{%- endif -%}
+		{% endspaceless %}
+	{% endmacro %}
 
 
-{# Images #}
-{% macro single_image(image, class) %}
-	<img data-src="{{ image.url }}" src="{{image.getUrl('lazyload')}}" alt="{{image.title}}" title="{{ image.title }}" class="{{ class }} lazyload" height="{{ image.height }}" width="{{ image.width }}">
-{% endmacro %}
+	{# Images #}
+	{% macro single_image(image, class) %}
+		<img data-src="{{ image.url }}" src="{{image.getUrl('lazyload')}}" alt="{{image.title}}" title="{{ image.title }}" class="{{ class }} lazyload" height="{{ image.height }}" width="{{ image.width }}">
+	{% endmacro %}
 
 
-{# Transitions inView #}
-{% macro transitions(content) %}
-	{% spaceless %}
-		{% for value in content.transition %}
-			{{value.timing}}
-			{{value.delay}}
+	{# Transitions inView #}
+	{% macro transitions(content) %}
+		{% spaceless %}
+			{% for value in content.transition %}
+				{{value.timing}}
+				{{value.delay}}
+				
+				
+				{{value.duration}}
+				{{value.initialize}}
+				{% if value.initialize == 'inView' %}inView--{% endif %}{{value.transition}}
+				
+			{% endfor %}
+		{% endspaceless %}
+	{% endmacro %}
+
+
+	{# Spacing #}
+	{% macro spacing(content) %}
+		{% spaceless %}
+			{{ content.spacing }} 
+		{% endspaceless %}
+	{% endmacro %}
+
+	{# Ratio #}
+	{% macro ratio(content) %}
+		{% spaceless %}
+			{{ content.aspectRatio }} 
+		{% endspaceless %}
+	{% endmacro %}
+
+	{# Radius #}
+	{% macro radius(content) %}
+		{% spaceless %}
+			{{ content.borderRadius }} 
+		{% endspaceless %}
+	{% endmacro %}
+
+	{# Align #}
+	{% macro align(content) %}
+		{% spaceless %}
+			{{ content.alignment }} 
+		{% endspaceless %}
+	{% endmacro %}
+
+	{# Color (Background+Text) #}
+	{% macro colors(content) %}
+		{% spaceless %}	
+			{% for value in content.colors %}
+				{{ value.background }} 
+				{{ value.text }} 		
+			{% endfor %}	
+		{% endspaceless %}
+	{% endmacro %}
+
+	{# Pattern #}
+	{% macro pattern(content) %}
+		{% spaceless %}
+			{% if content.pattern != 'no-pattern' %}
+				bg-pattern {{ content.pattern }} 
+			{% endif %}		
+		{% endspaceless %}
+	{% endmacro %}
+
+	{# Overlay #}
+	{% macro overlay(content) %}
+		{% spaceless %}
+			{% if content.overlay != 'no-overlay' %}
+				bg-overlay {{ content.overlay }} 
+			{% endif %}		
+			{% if content.backgroundImage.count() %}
+				bg-image
+			{% endif %}
 			
-			
-			{{value.duration}}
-			{{value.initialize}}
-			{% if value.initialize == 'inView' %}inView--{% endif %}{{value.transition}}
-			
-		{% endfor %}
-	{% endspaceless %}
-{% endmacro %}
+		{% endspaceless %}
+	{% endmacro %}
 
-
-{# Spacing #}
-{% macro spacing(content) %}
-	{% spaceless %}
-		{{ content.spacing }} 
-	{% endspaceless %}
-{% endmacro %}
-
-{# Ratio #}
-{% macro ratio(content) %}
-	{% spaceless %}
-		{{ content.aspectRatio }} 
-	{% endspaceless %}
-{% endmacro %}
-
-{# Radius #}
-{% macro radius(content) %}
-	{% spaceless %}
-		{{ content.borderRadius }} 
-	{% endspaceless %}
-{% endmacro %}
-
-{# Align #}
-{% macro align(content) %}
-	{% spaceless %}
-		{{ content.alignment }} 
-	{% endspaceless %}
-{% endmacro %}
-
-{# Color (Background+Text) #}
-{% macro colors(content) %}
-	{% spaceless %}	
-		{% for value in content.colors %}
-			{{ value.background }} 
-			{{ value.text }} 		
-		{% endfor %}	
-	{% endspaceless %}
-{% endmacro %}
-
-{# Pattern #}
-{% macro pattern(content) %}
-	{% spaceless %}
-		{% if content.pattern != 'no-pattern' %}
-			bg-pattern {{ content.pattern }} 
-		{% endif %}		
-	{% endspaceless %}
-{% endmacro %}
-
-{# Overlay #}
-{% macro overlay(content) %}
-	{% spaceless %}
-		{% if content.overlay != 'no-overlay' %}
-			bg-overlay {{ content.overlay }} 
-		{% endif %}		
-		{% if content.backgroundImage.count() %}
-			bg-image
-		{% endif %}
-		
-	{% endspaceless %}
-{% endmacro %}
-
-{# Background Image #}
-{% macro bgImg(content) %}
-	{% spaceless %}
-		{% if content.backgroundImage.count() %}
-			style="background-image:url({{ content.backgroundImage.one().url }})" 
-		{% endif %}		
-	{% endspaceless %}
-{% endmacro %}
+	{# Background Image #}
+	{% macro bgImg(content) %}
+		{% spaceless %}
+			{% if content.backgroundImage.count() %}
+				style="background-image:url({{ content.backgroundImage.one().url }})" 
+			{% endif %}		
+		{% endspaceless %}
+	{% endmacro %}
